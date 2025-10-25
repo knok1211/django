@@ -73,7 +73,7 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-CSRF_TRUSTED_ORIGINS = ['https://*.cloudtype.app'] 
+CSRF_TRUSTED_ORIGINS = ['https://*.cloudtype.app']
 
 DATABASES = "svc.sel3.cloudtype.app", "31788"
 
