@@ -1,0 +1,4 @@
+Host django
+  HostName 223.130.136.92
+  User root
+  IdentityFile django.pem
