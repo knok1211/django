@@ -75,7 +75,13 @@ WSGI_APPLICATION = 'project1.wsgi.application'
 
 CSRF_TRUSTED_ORIGINS = ['https://*.cloudtype.app']
 
-DATABASES = "svc.sel3.cloudtype.app", "31788"
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+
+    }
+}
 
 
 # Password validation
