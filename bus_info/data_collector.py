@@ -32,7 +32,7 @@ class BusDataCollector:
     
     def is_skip_time(self, query_time_str):
         """
-        쿼리 시간이 01:00 ~ 05:30 범위인지 확인
+        쿼리 시간이 00:00 ~ 05:30 범위인지 확인
         """
         try:
             if query_time_str == 'N/A':
@@ -46,8 +46,8 @@ class BusDataCollector:
             query_datetime = datetime.strptime(query_time_str, '%Y-%m-%d %H:%M:%S')
             query_time = query_datetime.time()
             
-            # 01:00 ~ 05:30 범위 확인
-            skip_start = dt_time(1, 0)  # 01:00
+            # 00:00 ~ 05:30 범위 확인
+            skip_start = dt_time(0, 0)  # 00:00
             skip_end = dt_time(5, 30)   # 05:30
             
             return skip_start <= query_time <= skip_end
@@ -107,12 +107,12 @@ class BusDataCollector:
             result_message = msg_header.get('resultMessage', '')
             query_time = msg_header.get('queryTime', 'N/A')
             
-            # 01:00 ~ 05:30 시간대 체크
+            # 00:00 ~ 05:30 시간대 체크
             if self.is_skip_time(query_time):
                 return {
                     'query_time': query_time,
                     'skipped': True,
-                    'skip_reason': '01:00 ~ 05:30 시간대는 수집하지 않습니다.'
+                    'skip_reason': '00:00 ~ 05:30 시간대는 수집하지 않습니다.'
                 }
             
             if result_code == 0:
