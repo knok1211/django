@@ -62,7 +62,8 @@ class BusDataCollector:
         """
         try:
             if query_time_str == 'N/A':
-                return datetime.now().strftime('%Y-%m-%d')
+                # 쿼리 시간이 없는 경우 기본값 반환
+                return '1970-01-01'
             
             # query_time 형식: "2024-01-01 12:00:00" 또는 "2024-01-01 12:00:00.123"
             # 밀리초 부분이 있으면 제거
@@ -74,7 +75,43 @@ class BusDataCollector:
             
         except Exception as e:
             print(f"날짜 파싱 오류: {e}")
-            return datetime.now().strftime('%Y-%m-%d')
+            # 파싱 실패 시 쿼리 시간 문자열에서 날짜 부분만 추출 시도
+            try:
+                if query_time_str and len(query_time_str) >= 10:
+                    return query_time_str[:10]  # "YYYY-MM-DD" 부분만 추출
+                else:
+                    return '1970-01-01'
+            except:
+                return '1970-01-01'
+    
+    def get_iso_from_query_time(self, query_time_str):
+        """
+        쿼리 시간을 ISO 형식으로 변환
+        """
+        try:
+            if query_time_str == 'N/A':
+                # 쿼리 시간이 없는 경우 원본 쿼리 시간 문자열 반환
+                return query_time_str
+            
+            # query_time 형식: "2024-01-01 12:00:00" 또는 "2024-01-01 12:00:00.123"
+            # 밀리초 부분 처리
+            if '.' in query_time_str:
+                # 밀리초가 있는 경우: "2024-01-01 12:00:00.123"
+                dt_part, ms_part = query_time_str.split('.')
+                query_datetime = datetime.strptime(dt_part, '%Y-%m-%d %H:%M:%S')
+                # 밀리초를 마이크로초로 변환 (3자리 -> 6자리)
+                microseconds = int(ms_part.ljust(6, '0')[:6])
+                query_datetime = query_datetime.replace(microsecond=microseconds)
+            else:
+                # 밀리초가 없는 경우: "2024-01-01 12:00:00"
+                query_datetime = datetime.strptime(query_time_str, '%Y-%m-%d %H:%M:%S')
+            
+            return query_datetime.isoformat()
+            
+        except Exception as e:
+            print(f"ISO 시간 변환 오류: {e}")
+            # 파싱 실패 시 원본 쿼리 시간 문자열 반환
+            return query_time_str
 
     def collect_bus_data(self):
         """
@@ -163,11 +200,14 @@ class BusDataCollector:
             filename = f"bus_data_{self.route_id}_{date_str}.json"
             filepath = os.path.join(self.data_dir, filename)
             
+            # 쿼리 시간을 ISO 형식으로 변환
+            query_iso_time = self.get_iso_from_query_time(data.get('query_time', 'N/A'))
+            
             # 기존 파일이 있으면 읽어서 업데이트
             existing_data = {
                 'route_id': self.route_id,
                 'date': date_str,
-                'last_updated': datetime.now().isoformat(),
+                'last_updated': query_iso_time,
                 'collections': []
             }
             
@@ -178,8 +218,8 @@ class BusDataCollector:
                 except:
                     pass  # 파일이 손상된 경우 새로 시작
             
-            # 새 수집 데이터 추가
-            existing_data['last_updated'] = datetime.now().isoformat()
+            # 새 수집 데이터 추가 (쿼리 시간으로 last_updated 갱신)
+            existing_data['last_updated'] = query_iso_time
             existing_data['collections'].append(data)
             
             # 하루 최대 1000개 수집 데이터 유지 (파일 크기 관리)
@@ -196,31 +236,51 @@ class BusDataCollector:
             print(f"JSON 저장 오류: {e}")
             return None
     
+    def get_log_time_from_query_time(self, query_time_str):
+        """
+        쿼리 시간을 로그용 시간 형식으로 변환
+        """
+        try:
+            if query_time_str == 'N/A':
+                return '[N/A]'
+            
+            # query_time 형식: "2024-01-01 12:00:00" 또는 "2024-01-01 12:00:00.123"
+            # 밀리초 부분이 있으면 제거
+            if '.' in query_time_str:
+                query_time_str = query_time_str.split('.')[0]
+            
+            return f"[{query_time_str}]"
+            
+        except Exception as e:
+            return f"[{query_time_str}]"
+
     def collect_and_save(self):
         """
         데이터 수집 및 저장 실행
         """
-        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 버스 데이터 수집 시작 - 노선: {self.route_id}")
-        
         data = self.collect_bus_data()
+        query_time = data.get('query_time', 'N/A')
+        log_time = self.get_log_time_from_query_time(query_time)
+        
+        print(f"{log_time} 버스 데이터 수집 시작 - 노선: {self.route_id}")
         
         # 수집 건너뛰기 체크
         if data.get('skipped'):
-            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 수집 건너뜀: {data.get('skip_reason')}")
-            print(f"  - 쿼리 시간: {data.get('query_time')}")
+            print(f"{log_time} 수집 건너뜀: {data.get('skip_reason')}")
+            print(f"  - 쿼리 시간: {query_time}")
             return None
         
         filepath = self.save_to_json(data)
         
         if filepath:
-            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 데이터 저장 완료: {filepath}")
+            print(f"{log_time} 데이터 저장 완료: {filepath}")
             if 'buses' in data:
-                print(f"  - 쿼리 시간: {data.get('query_time')}")
+                print(f"  - 쿼리 시간: {query_time}")
                 print(f"  - 수집된 버스 수: {len(data['buses'])}대")
                 for bus in data['buses']:
                     print(f"    🚌 {bus['plateNo']} - 잔여좌석: {bus['remainSeatCnt']}개, 정류소순번: {bus['stationSeq']}")
         else:
-            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 데이터 저장 실패")
+            print(f"{log_time} 데이터 저장 실패")
     
     def start_collection(self):
         """

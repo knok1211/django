@@ -70,17 +70,33 @@ def get_collection_status(request):
         status = bus_collector.get_status()
         data_dir = status['data_directory']
         
-        # 오늘 날짜 파일 확인
-        today_str = datetime.now().strftime('%Y-%m-%d')
-        today_file = f"bus_data_{bus_collector.route_id}_{today_str}.json"
-        today_filepath = os.path.join(data_dir, today_file)
-        
-        # 모든 날짜별 파일 목록 조회
+        # 최신 수집 데이터 기준 날짜 파일 확인
+        # 모든 파일을 먼저 조회하여 가장 최근 파일 찾기
         pattern = os.path.join(data_dir, f"bus_data_{bus_collector.route_id}_*.json")
         all_files = glob.glob(pattern)
         
+        current_date_str = None
+        if all_files:
+            # 파일명으로 정렬하여 가장 최근 파일의 날짜 추출
+            all_files.sort()
+            latest_file = all_files[-1]
+            filename = os.path.basename(latest_file)
+            # bus_data_234001730_2025-10-26.json에서 날짜 부분 추출
+            parts = filename.split('_')
+            if len(parts) >= 3:
+                current_date_str = parts[2].replace('.json', '')
+        
+        # 현재 날짜 기준 파일 설정
+        if current_date_str:
+            today_file = f"bus_data_{bus_collector.route_id}_{current_date_str}.json"
+            today_filepath = os.path.join(data_dir, today_file)
+        else:
+            # 파일이 없는 경우 기본값
+            today_file = f"bus_data_{bus_collector.route_id}_no-data.json"
+            today_filepath = ""
+        
         status['today_file'] = today_file
-        status['today_file_exists'] = os.path.exists(today_filepath)
+        status['today_file_exists'] = os.path.exists(today_filepath) if today_filepath else False
         status['total_files'] = len(all_files)
         
         # 오늘 파일이 있으면 수집 횟수 확인
