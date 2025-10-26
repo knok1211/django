@@ -66,8 +66,8 @@ class BusDataCollector:
                 
                 # 수집된 데이터 구조화
                 collected_data = {
-                    'collection_time': datetime.now().isoformat(),
-                    #'query_time': query_time,
+                    #'collection_time': datetime.now().isoformat(),
+                    'query_time': query_time,
                     #'route_id': self.route_id,
                     #'result_code': result_code,
                     #'result_message': result_message,
@@ -203,3 +203,4 @@ class BusDataCollector:
 
 # 전역 수집기 인스턴스
 bus_collector = BusDataCollector(route_id="234001730", interval_minutes=2)
+
