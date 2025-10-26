@@ -87,7 +87,7 @@ class BusDataCollector:
                 return collected_data
             else:
                 return {
-                    'collection_time': datetime.now().isoformat(),
+                    'query_time': query_time,
                     'route_id': self.route_id,
                     'result_code': result_code,
                     'result_message': result_message,
@@ -96,7 +96,7 @@ class BusDataCollector:
                 
         except Exception as e:
             return {
-                'collection_time': datetime.now().isoformat(),
+                'query_time': query_time,
                 'route_id': self.route_id,
                 'error': True,
                 'error_message': str(e)
@@ -203,4 +203,3 @@ class BusDataCollector:
 
 # 전역 수집기 인스턴스
 bus_collector = BusDataCollector(route_id="234001730", interval_minutes=2)
-

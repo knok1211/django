@@ -251,8 +251,15 @@ def get_collection_status(request):
             try:
                 with open(main_filepath, 'r', encoding='utf-8') as f:
                     file_data = json.load(f)
-                status['collection_count'] = len(file_data.get('collections', []))
-                status['last_updated'] = file_data.get('last_updated', 'N/A')
+                collections = file_data.get('collections', [])
+                status['collection_count'] = len(collections)
+                
+                # 마지막 수집 데이터의 queryTime 사용
+                if collections:
+                    last_collection = collections[-1]
+                    status['last_updated'] = last_collection.get('query_time', 'N/A')
+                else:
+                    status['last_updated'] = 'N/A'
             except:
                 status['collection_count'] = 0
                 status['last_updated'] = 'N/A'
