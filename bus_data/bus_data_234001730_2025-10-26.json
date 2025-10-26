@@ -1,0 +1,1967 @@
+{
+  "route_id": "234001730",
+  "date": "2025-10-26",
+  "last_updated": "2025-10-26T15:30:04.575876",
+  "collections": [
+    {
+      "query_time": "2025-10-26 12:19:39.796",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 33,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 32
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:21:08.721",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 33,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 32
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:21:46.421",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 33,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 33
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:23:09.346",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 33,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 34
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:23:47.421",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 33,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 34
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:24:41.343",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 33,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 35
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:25:47.796",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 33,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 35
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:26:41.687",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 33,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 35
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:28:16.581",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 33,
+          "stationSeq": 8
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 36
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:28:43.890",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 8
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 36
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:30:16.972",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 8
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 37
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:31:13.456",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 8
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 37
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:32:17.363",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 8
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 38
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:32:45.765",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 8
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 38
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:34:17.753",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 9
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 39
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:35:14.597",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 9
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 39
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:36:18.128",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 9
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 40
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:36:46.515",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 9
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 40
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:37:50.062",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 10
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 40
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:39:15.347",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 10
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 41
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:40:19.004",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 10
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 41
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:40:47.265",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 10
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 41
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:42:06.301",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 45,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 10
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 41
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:43:38.202",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 11
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 42
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:45:38.562",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 11
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 42
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:47:38.937",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 12
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 43
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:50:07.785",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 13
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 43
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:52:08.160",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 14
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 44
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:54:10.019",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": -1,
+          "stationSeq": 15
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 35,
+          "stationSeq": 44
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:56:11.285",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 16
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 38,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 12:57:43.827",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 17
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 38,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:00:13.315",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 17
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 38,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:01:45.155",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 43,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 19
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 38,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:03:45.515",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 43,
+          "stationSeq": 2
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 20
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 38,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:06:15.883",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 43,
+          "stationSeq": 3
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 21
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 38,
+          "stationSeq": 47
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:08:16.536",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 43,
+          "stationSeq": 3
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 31,
+          "stationSeq": 21
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 38,
+          "stationSeq": 47
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:09:48.437",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 43,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 37,
+          "stationSeq": 22
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 40,
+          "stationSeq": 48
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:12:17.458",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 38,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 37,
+          "stationSeq": 22
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 40,
+          "stationSeq": 48
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:14:17.974",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 38,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 37,
+          "stationSeq": 23
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 40,
+          "stationSeq": 48
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:16:18.412",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 38,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 37,
+          "stationSeq": 24
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 41,
+          "stationSeq": 48
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:17:50.234",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 38,
+          "stationSeq": 5
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 37,
+          "stationSeq": 25
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 49
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:20:19.209",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 36,
+          "stationSeq": 5
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 39,
+          "stationSeq": 27
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 49
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:22:19.600",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 36,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 38,
+          "stationSeq": 27
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:23:51.359",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 34,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": -1,
+          "stationSeq": 28
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:26:20.412",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 34,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 38,
+          "stationSeq": 28
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:28:20.787",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 34,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 38,
+          "stationSeq": 29
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:29:53.530",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 34,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 38,
+          "stationSeq": 29
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:32:23.504",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 30,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 38,
+          "stationSeq": 30
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:33:55.312",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 30,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 31
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:35:55.687",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 30,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 31
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:38:25.098",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 8
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 32
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:39:56.765",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 8
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 33
+        },
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 45,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:42:25.863",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 8
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 34
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:43:57.530",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 9
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 35
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:46:26.617",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 9
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 36
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:47:59.015",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 9
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 37
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:50:28.112",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 9
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 39
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:52:28.642",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 10
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 39
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:54:29.007",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 10
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 40
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:56:29.383",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 10
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 41
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 13:58:01.015",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 11
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 41
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:00:01.405",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 12
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 42
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:02:30.569",
+      "buses": [
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 13
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 42
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:04:02.156",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 40,
+          "stationSeq": 2
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 13
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 43
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:06:02.546",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 40,
+          "stationSeq": 3
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 14
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 43
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:08:02.921",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 40,
+          "stationSeq": 3
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 15
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 44
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:10:32.132",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 39,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 17
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 35,
+          "stationSeq": 44
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:12:03.827",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 39,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 17
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 36,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:14:04.202",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 39,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 18
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 36,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:16:33.413",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 35,
+          "stationSeq": 5
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 20
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 36,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:18:34.069",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 35,
+          "stationSeq": 5
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 21
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 36,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:20:05.593",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 32,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 29,
+          "stationSeq": 21
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 37,
+          "stationSeq": 47
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:22:34.850",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 32,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 35,
+          "stationSeq": 22
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 39,
+          "stationSeq": 47
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:24:06.343",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 32,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 35,
+          "stationSeq": 22
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 39,
+          "stationSeq": 48
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:26:35.958",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 32,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 35,
+          "stationSeq": 23
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 40,
+          "stationSeq": 48
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:28:36.912",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 32,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 35,
+          "stationSeq": 24
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 40,
+          "stationSeq": 48
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:30:10.234",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 32,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 35,
+          "stationSeq": 25
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 40,
+          "stationSeq": 48
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:32:11.296",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 37,
+          "stationSeq": 27
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 43,
+          "stationSeq": 49
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:34:11.968",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 37,
+          "stationSeq": 27
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 43,
+          "stationSeq": 49
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:36:12.327",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 37,
+          "stationSeq": 27
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 44,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:38:41.616",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 33,
+          "stationSeq": 28
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 44,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:40:41.992",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 33,
+          "stationSeq": 28
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 44,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:42:13.421",
+      "buses": [
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 7
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 33,
+          "stationSeq": 29
+        },
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 44,
+          "stationSeq": 50
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:51:35.984",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 44,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 9
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 33
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:53:36.468",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 44,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 9
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 34
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:55:36.827",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 44,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 10
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 35
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:57:37.452",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 44,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 10
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 36
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 14:59:37.796",
+      "buses": [
+        {
+          "plateNo": "경기77바2126",
+          "remainSeatCnt": 44,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 11
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 37
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:02:07.779",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 41,
+          "stationSeq": 1
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 11
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 38
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:03:39.171",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 41,
+          "stationSeq": 2
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 12
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 39
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:06:08.593",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 41,
+          "stationSeq": 2
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 13
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 39
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:07:39.984",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 40,
+          "stationSeq": 3
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 14
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 40
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:09:40.452",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 40,
+          "stationSeq": 3
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 15
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 41
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:11:40.921",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 40,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 16
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 42
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:14:11.445",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 36,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 17
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 42
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:16:11.961",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 36,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 18
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 42
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:17:43.249",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 36,
+          "stationSeq": 4
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 19
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 43
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:20:12.712",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 33,
+          "stationSeq": 5
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 20
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 43
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:22:13.103",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 33,
+          "stationSeq": 5
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 21
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 24,
+          "stationSeq": 44
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:23:44.359",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 31,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 29,
+          "stationSeq": 21
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 26,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:25:44.718",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 31,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 35,
+          "stationSeq": 22
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 28,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:27:45.468",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 31,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 35,
+          "stationSeq": 23
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 28,
+          "stationSeq": 46
+        }
+      ]
+    },
+    {
+      "query_time": "2025-10-26 15:29:45.952",
+      "buses": [
+        {
+          "plateNo": "경기77바2918",
+          "remainSeatCnt": 31,
+          "stationSeq": 6
+        },
+        {
+          "plateNo": "경기77바2281",
+          "remainSeatCnt": 35,
+          "stationSeq": 23
+        },
+        {
+          "plateNo": "경기77바2931",
+          "remainSeatCnt": 28,
+          "stationSeq": 46
+        }
+      ]
+    }
+  ]
+}

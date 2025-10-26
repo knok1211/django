@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>경기도 버스 좌석수 조회</title>
+    <title>경기도 버스 데이터 수집</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -107,22 +107,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>🚌 경기도 버스 좌석수 조회</h1>
+        <h1>🚌 경기도 버스 데이터 수집</h1>
         
-        <div class="input-group">
-            <label for="routeId">노선 ID를 입력하세요:</label>
-            <input type="text" id="routeId" placeholder="예: 233000031" value="233000031">
-        </div>
+
         
-        <button onclick="getBusSeatInfo()">좌석수 조회</button>
-        
-        <div style="margin-top: 10px;">
-            <button onclick="testApiConnection()" style="background-color: #e74c3c;">API 연결 테스트</button>
-        </div>
-        
-        <hr style="margin: 20px 0;">
-        
-        <h2>📊 자동 데이터 수집 (노선: 234001730)</h2>
+        <h2>📊 자동 데이터 수집(직행좌석 8201)</h2>
         <div style="display: flex; gap: 10px; margin-bottom: 20px;">
             <button onclick="startCollection()" style="background-color: #27ae60;">수집 시작</button>
             <button onclick="stopCollection()" style="background-color: #e74c3c;">수집 중지</button>
@@ -142,130 +131,7 @@
     </div>
 
     <script>
-        async function getBusSeatInfo() {
-            const routeId = document.getElementById('routeId').value.trim();
-            
-            if (!routeId) {
-                alert('노선 ID를 입력해주세요.');
-                return;
-            }
-            
-            const resultDiv = document.getElementById('result');
-            const loadingDiv = document.getElementById('loading');
-            const contentDiv = document.getElementById('content');
-            
-            resultDiv.style.display = 'block';
-            loadingDiv.style.display = 'block';
-            contentDiv.innerHTML = '';
-            
-            try {
-                const response = await fetch(`/api/bus-seat/?routeId=${routeId}`);
-                const data = await response.json();
-                
-                loadingDiv.style.display = 'none';
-                
-                if (data.success) {
-                    displayBusInfo(data);
-                } else {
-                    displayError(data.error || '알 수 없는 오류가 발생했습니다.', data);
-                }
-            } catch (error) {
-                loadingDiv.style.display = 'none';
-                displayError('네트워크 오류가 발생했습니다: ' + error.message);
-            }
-        }
-        
-        function displayBusInfo(data) {
-            const contentDiv = document.getElementById('content');
-            
-            if (data.busCount === 0) {
-                contentDiv.innerHTML = '<p>해당 노선의 버스 정보를 찾을 수 없습니다.</p>';
-                return;
-            }
-            
-            let html = `
-                <h3>📊 조회 결과</h3>
-                <p><strong>노선 ID:</strong> ${data.routeId}</p>
-                <p><strong>조회 시간:</strong> ${data.queryTime}</p>
-                <p><strong>운행 중인 버스:</strong> ${data.busCount}대</p>
-                <hr>
-            `;
-            
-            data.busList.forEach((bus, index) => {
-                html += `
-                    <div class="bus-item">
-                        <div class="bus-header">🚌 ${bus.plateNo || '차량번호 정보없음'} <span style="font-size: 14px; color: #7f8c8d;">(${bus.busType})</span></div>
-                        <div class="bus-info">
-                            <div class="info-item seat-info">${bus.seatInfo}</div>
-                            <div class="info-item crowded-info">혼잡도: ${bus.crowdedInfo}</div>
-                            <div class="info-item">상태: ${bus.stateInfo}</div>
-                            <div class="info-item">정류소 순번: ${bus.stationSeq}</div>
-                        </div>
-                    </div>
-                `;
-            });
-            
-            contentDiv.innerHTML = html;
-        }
-        
-        function displayError(message, details = null) {
-            const contentDiv = document.getElementById('content');
-            let errorHtml = `<div class="error">❌ ${message}</div>`;
-            
-            if (details) {
-                errorHtml += `<div style="margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 3px; font-size: 12px; color: #666;">
-                    <strong>상세 정보:</strong><br>
-                    ${JSON.stringify(details, null, 2)}
-                </div>`;
-            }
-            
-            contentDiv.innerHTML = errorHtml;
-        }
-        
-        async function testApiConnection() {
-            const resultDiv = document.getElementById('result');
-            const loadingDiv = document.getElementById('loading');
-            const contentDiv = document.getElementById('content');
-            
-            resultDiv.style.display = 'block';
-            loadingDiv.style.display = 'block';
-            contentDiv.innerHTML = '';
-            
-            try {
-                const response = await fetch('/api/test/');
-                const data = await response.json();
-                
-                loadingDiv.style.display = 'none';
-                
-                if (data.success) {
-                    let statusColor = data.status_code === 200 ? '#d4edda' : '#fff3cd';
-                    let statusIcon = data.status_code === 200 ? '✅' : '⚠️';
-                    let statusText = data.status_code === 200 ? '연결 성공!' : `응답 코드: ${data.status_code}`;
-                    
-                    contentDiv.innerHTML = `
-                        <h3>🔍 API 연결 테스트 결과</h3>
-                        <div style="background-color: ${statusColor}; padding: 15px; border-radius: 5px; margin: 10px 0;">
-                            <strong>${statusIcon} ${statusText}</strong>
-                        </div>
-                        <div style="background-color: #f8f9fa; padding: 10px; border-radius: 3px; font-size: 12px; margin: 10px 0;">
-                            <strong>요청 URL:</strong> ${data.request_url}<br>
-                            <strong>응답 코드:</strong> ${data.status_code}<br>
-                            <strong>응답 길이:</strong> ${data.response_length}자<br>
-                            <strong>JSON 파싱:</strong> ${data.json_parsed ? '✅ 성공' : '❌ 실패'}<br>
-                            ${data.json_error ? `<strong>JSON 오류:</strong> ${data.json_error}<br>` : ''}
-                            <strong>응답 내용:</strong><br>
-                            <pre style="white-space: pre-wrap; font-size: 11px; max-height: 300px; overflow-y: auto;">${data.response_text}</pre>
-                            ${data.json_data ? `<strong>파싱된 JSON:</strong><br><pre style="white-space: pre-wrap; font-size: 11px; max-height: 200px; overflow-y: auto;">${JSON.stringify(data.json_data, null, 2)}</pre>` : ''}
-                        </div>
-                    `;
-                } else {
-                    displayError('API 연결 테스트 실패', data);
-                }
-            } catch (error) {
-                loadingDiv.style.display = 'none';
-                displayError('API 연결 테스트 중 오류 발생: ' + error.message);
-            }
-        }
+
         
         // 데이터 수집 관련 함수들
         async function startCollection() {
@@ -329,22 +195,43 @@
                     let statusColor = status.is_running ? '#d4edda' : '#f8d7da';
                     let statusText = status.is_running ? '🟢 실행 중' : '🔴 중지됨';
                     
+                    let fileListHtml = '';
+                    if (status.file_list && status.file_list.length > 0) {
+                        fileListHtml = '<div style="margin-top: 15px;"><strong>📁 데이터 파일 목록:</strong><br>';
+                        status.file_list.forEach(file => {
+                            fileListHtml += `
+                                <div style="background-color: white; padding: 8px; margin: 5px 0; border-radius: 3px; display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-size: 12px;">${file.filename} (${file.size_mb}MB)</span>
+                                    <button onclick="downloadFile('${file.filename}')" style="background-color: #3498db; color: white; padding: 4px 8px; border: none; border-radius: 3px; cursor: pointer; font-size: 11px;">
+                                        다운로드
+                                    </button>
+                                </div>
+                            `;
+                        });
+                        fileListHtml += '</div>';
+                    }
+
                     contentDiv.innerHTML = `
                         <div style="background-color: ${statusColor}; padding: 10px; border-radius: 3px; margin-bottom: 10px;">
                             <strong>상태:</strong> ${statusText}<br>
                             <strong>노선 ID:</strong> ${status.route_id}<br>
                             <strong>수집 간격:</strong> ${status.interval_minutes}분<br>
-                            <strong>수집 횟수:</strong> ${status.collection_count}회<br>
+                            <strong>오늘 수집 횟수:</strong> ${status.collection_count}회<br>
                             <strong>마지막 데이터 수집:</strong> ${status.last_updated}<br>
-                            <strong>데이터 파일:</strong> ${status.main_file}
+                            <strong>총 파일 수:</strong> ${status.total_files}개<br>
+                            <strong>오늘 파일:</strong> ${status.today_file}
                         </div>
-                        ${status.file_exists ? `
-                            <div>
-                                <button onclick="downloadFile('${status.main_file}')" style="background-color: #3498db; color: white; padding: 8px 16px; border: none; border-radius: 3px; cursor: pointer;">
-                                    📄 데이터 파일 다운로드
+                        ${status.today_file_exists ? `
+                            <div style="margin-bottom: 10px;">
+                                <button onclick="downloadFile('${status.today_file}')" style="background-color: #27ae60; color: white; padding: 8px 16px; border: none; border-radius: 3px; cursor: pointer;">
+                                    📄 오늘 데이터 다운로드
                                 </button>
                             </div>
                         ` : ''}
+                        ${fileListHtml}
+                        <div style="margin-top: 10px; padding: 8px; background-color: #fff3cd; border-radius: 3px; font-size: 12px;">
+                            ⏰ <strong>수집 제외 시간:</strong> 01:00 ~ 05:30 (새벽 시간대는 자동으로 건너뜀)
+                        </div>
                     `;
                     
                     statusDiv.style.display = 'block';
@@ -382,12 +269,7 @@
             getStatus();
         });
         
-        // Enter 키로 검색
-        document.getElementById('routeId').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                getBusSeatInfo();
-            }
-        });
+
     </script>
 </body>
 </html>

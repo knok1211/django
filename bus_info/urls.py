@@ -3,9 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('api/bus-seat/', views.get_bus_seat_info, name='bus_seat_info'),
-    path('api/route-info/', views.get_route_info, name='route_info'),
-    path('api/test/', views.test_api_connection, name='test_api'),
+
     
     # 데이터 수집 관련 API
     path('api/collection/start/', views.start_data_collection, name='start_collection'),

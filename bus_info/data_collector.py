@@ -2,7 +2,7 @@ import json
 import os
 import threading
 import time
-from datetime import datetime
+from datetime import datetime, time as dt_time
 from django.conf import settings
 from .config import (
     GBIS_SERVICE_KEY, 
@@ -30,6 +30,52 @@ class BusDataCollector:
         if not os.path.exists(self.data_dir):
             os.makedirs(self.data_dir)
     
+    def is_skip_time(self, query_time_str):
+        """
+        쿼리 시간이 01:00 ~ 05:30 범위인지 확인
+        """
+        try:
+            if query_time_str == 'N/A':
+                return False
+            
+            # query_time 형식: "2024-01-01 12:00:00" 또는 "2024-01-01 12:00:00.123"
+            # 밀리초 부분이 있으면 제거
+            if '.' in query_time_str:
+                query_time_str = query_time_str.split('.')[0]
+            
+            query_datetime = datetime.strptime(query_time_str, '%Y-%m-%d %H:%M:%S')
+            query_time = query_datetime.time()
+            
+            # 01:00 ~ 05:30 범위 확인
+            skip_start = dt_time(1, 0)  # 01:00
+            skip_end = dt_time(5, 30)   # 05:30
+            
+            return skip_start <= query_time <= skip_end
+            
+        except Exception as e:
+            print(f"시간 파싱 오류: {e}")
+            return False
+    
+    def get_date_from_query_time(self, query_time_str):
+        """
+        쿼리 시간에서 날짜 추출 (YYYY-MM-DD 형식)
+        """
+        try:
+            if query_time_str == 'N/A':
+                return datetime.now().strftime('%Y-%m-%d')
+            
+            # query_time 형식: "2024-01-01 12:00:00" 또는 "2024-01-01 12:00:00.123"
+            # 밀리초 부분이 있으면 제거
+            if '.' in query_time_str:
+                query_time_str = query_time_str.split('.')[0]
+            
+            query_datetime = datetime.strptime(query_time_str, '%Y-%m-%d %H:%M:%S')
+            return query_datetime.strftime('%Y-%m-%d')
+            
+        except Exception as e:
+            print(f"날짜 파싱 오류: {e}")
+            return datetime.now().strftime('%Y-%m-%d')
+
     def collect_bus_data(self):
         """
         현재 시점의 버스 데이터를 수집
@@ -61,17 +107,20 @@ class BusDataCollector:
             result_message = msg_header.get('resultMessage', '')
             query_time = msg_header.get('queryTime', 'N/A')
             
+            # 01:00 ~ 05:30 시간대 체크
+            if self.is_skip_time(query_time):
+                return {
+                    'query_time': query_time,
+                    'skipped': True,
+                    'skip_reason': '01:00 ~ 05:30 시간대는 수집하지 않습니다.'
+                }
+            
             if result_code == 0:
                 bus_list = msg_body.get('busLocationList', [])
                 
                 # 수집된 데이터 구조화
                 collected_data = {
-                    #'collection_time': datetime.now().isoformat(),
                     'query_time': query_time,
-                    #'route_id': self.route_id,
-                    #'result_code': result_code,
-                    #'result_message': result_message,
-                    #'bus_count': len(bus_list),
                     'buses': []
                 }
                 
@@ -96,7 +145,7 @@ class BusDataCollector:
                 
         except Exception as e:
             return {
-                'query_time': query_time,
+                'query_time': 'N/A',
                 'route_id': self.route_id,
                 'error': True,
                 'error_message': str(e)
@@ -104,16 +153,20 @@ class BusDataCollector:
     
     def save_to_json(self, data):
         """
-        수집된 데이터를 JSON 파일에 저장 (기존 파일 업데이트)
+        수집된 데이터를 날짜별 JSON 파일에 저장
         """
         try:
-            # 고정 파일명 사용 (업데이트 방식)
-            filename = f"bus_data_{self.route_id}.json"
+            # 쿼리 시간에서 날짜 추출
+            date_str = self.get_date_from_query_time(data.get('query_time', 'N/A'))
+            
+            # 날짜별 파일명 생성
+            filename = f"bus_data_{self.route_id}_{date_str}.json"
             filepath = os.path.join(self.data_dir, filename)
             
             # 기존 파일이 있으면 읽어서 업데이트
             existing_data = {
                 'route_id': self.route_id,
+                'date': date_str,
                 'last_updated': datetime.now().isoformat(),
                 'collections': []
             }
@@ -129,9 +182,9 @@ class BusDataCollector:
             existing_data['last_updated'] = datetime.now().isoformat()
             existing_data['collections'].append(data)
             
-            # 최근 500개 수집 데이터만 유지 (파일 크기 관리)
-            if len(existing_data['collections']) > 500:
-                existing_data['collections'] = existing_data['collections'][-500:]
+            # 하루 최대 1000개 수집 데이터 유지 (파일 크기 관리)
+            if len(existing_data['collections']) > 1000:
+                existing_data['collections'] = existing_data['collections'][-1000:]
             
             # 업데이트된 파일 저장
             with open(filepath, 'w', encoding='utf-8') as f:
@@ -150,11 +203,19 @@ class BusDataCollector:
         print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 버스 데이터 수집 시작 - 노선: {self.route_id}")
         
         data = self.collect_bus_data()
+        
+        # 수집 건너뛰기 체크
+        if data.get('skipped'):
+            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 수집 건너뜀: {data.get('skip_reason')}")
+            print(f"  - 쿼리 시간: {data.get('query_time')}")
+            return None
+        
         filepath = self.save_to_json(data)
         
         if filepath:
             print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 데이터 저장 완료: {filepath}")
             if 'buses' in data:
+                print(f"  - 쿼리 시간: {data.get('query_time')}")
                 print(f"  - 수집된 버스 수: {len(data['buses'])}대")
                 for bus in data['buses']:
                     print(f"    🚌 {bus['plateNo']} - 잔여좌석: {bus['remainSeatCnt']}개, 정류소순번: {bus['stationSeq']}")
