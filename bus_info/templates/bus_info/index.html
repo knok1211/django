@@ -182,9 +182,13 @@
             }
         }
         
-        async function getStatus() {
+        let currentPage = 1;
+        const perPage = 10;
+        
+        async function getStatus(page = 1) {
             try {
-                const response = await fetch('/api/collection/status/');
+                currentPage = page;
+                const response = await fetch(`/api/collection/status/?page=${page}&per_page=${perPage}`);
                 const data = await response.json();
                 
                 if (data.success) {
@@ -197,7 +201,17 @@
                     
                     let fileListHtml = '';
                     if (status.file_list && status.file_list.length > 0) {
-                        fileListHtml = '<div style="margin-top: 15px;"><strong>📁 데이터 파일 목록:</strong><br>';
+                        const pagination = status.pagination;
+                        fileListHtml = `
+                            <div style="margin-top: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                    <strong>📁 데이터 파일 목록 (${pagination.total_files}개)</strong>
+                                    <button onclick="downloadAllFiles()" style="background-color: #9b59b6; color: white; padding: 4px 8px; border: none; border-radius: 3px; cursor: pointer; font-size: 11px;">
+                                        📦 전체 다운로드
+                                    </button>
+                                </div>
+                        `;
+                        
                         status.file_list.forEach(file => {
                             fileListHtml += `
                                 <div style="background-color: white; padding: 8px; margin: 5px 0; border-radius: 3px; display: flex; justify-content: space-between; align-items: center;">
@@ -208,6 +222,28 @@
                                 </div>
                             `;
                         });
+                        
+                        // 페이지네이션 버튼
+                        if (pagination.total_pages > 1) {
+                            fileListHtml += `
+                                <div style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 15px; padding: 10px; background-color: #f8f9fa; border-radius: 5px;">
+                                    <button onclick="getStatus(${pagination.current_page - 1})" 
+                                            ${!pagination.has_previous ? 'disabled' : ''} 
+                                            style="background-color: ${pagination.has_previous ? '#6c757d' : '#dee2e6'}; color: white; padding: 5px 10px; border: none; border-radius: 3px; cursor: ${pagination.has_previous ? 'pointer' : 'not-allowed'}; font-size: 12px;">
+                                        ◀ 이전
+                                    </button>
+                                    <span style="font-size: 12px; color: #6c757d;">
+                                        ${pagination.current_page} / ${pagination.total_pages} 페이지
+                                    </span>
+                                    <button onclick="getStatus(${pagination.current_page + 1})" 
+                                            ${!pagination.has_next ? 'disabled' : ''} 
+                                            style="background-color: ${pagination.has_next ? '#6c757d' : '#dee2e6'}; color: white; padding: 5px 10px; border: none; border-radius: 3px; cursor: ${pagination.has_next ? 'pointer' : 'not-allowed'}; font-size: 12px;">
+                                        다음 ▶
+                                    </button>
+                                </div>
+                            `;
+                        }
+                        
                         fileListHtml += '</div>';
                     }
 
@@ -264,10 +300,70 @@
             }
         }
         
+        async function downloadAllFiles() {
+            try {
+                if (!confirm('모든 데이터 파일을 ZIP으로 다운로드하시겠습니까?')) {
+                    return;
+                }
+                
+                // 로딩 표시
+                const buttons = document.querySelectorAll('button');
+                const downloadButtons = Array.from(buttons).filter(btn => btn.textContent.includes('전체'));
+                downloadButtons.forEach(btn => {
+                    btn.textContent = '다운로드 중...';
+                    btn.disabled = true;
+                });
+                
+                const response = await fetch('/api/collection/download-all/');
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    
+                    // 파일명을 응답 헤더에서 가져오기
+                    const contentDisposition = response.headers.get('Content-Disposition');
+                    let filename = 'bus_data_all.zip';
+                    if (contentDisposition) {
+                        const filenameMatch = contentDisposition.match(/filename="(.+)"/);
+                        if (filenameMatch) {
+                            filename = filenameMatch[1];
+                        }
+                    }
+                    
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                    document.body.removeChild(a);
+                    
+                    alert('✅ 전체 파일 다운로드가 완료되었습니다!');
+                } else {
+                    const errorData = await response.json();
+                    alert('❌ 전체 파일 다운로드 실패: ' + errorData.error);
+                }
+            } catch (error) {
+                alert('❌ 오류 발생: ' + error.message);
+            } finally {
+                // 로딩 상태 해제
+                const buttons = document.querySelectorAll('button');
+                const downloadButtons = Array.from(buttons).filter(btn => btn.textContent.includes('다운로드 중'));
+                downloadButtons.forEach(btn => {
+                    btn.textContent = '📦 전체 파일 다운로드';
+                    btn.disabled = false;
+                });
+            }
+        }
+        
         // 페이지 로드 시 상태 확인
         window.addEventListener('load', function() {
             getStatus();
         });
+        
+        // 자동 새로고침 (30초마다)
+        setInterval(function() {
+            getStatus(currentPage);
+        }, 30000);
         
 
     </script>

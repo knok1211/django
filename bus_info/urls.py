@@ -12,4 +12,5 @@ urlpatterns = [
     path('api/collection/once/', views.collect_data_once, name='collect_once'),
     path('api/collection/latest/', views.get_latest_data, name='latest_data'),
     path('api/collection/download/', views.download_data_file, name='download_data'),
+    path('api/collection/download-all/', views.download_all_files, name='download_all_files'),
 ]
